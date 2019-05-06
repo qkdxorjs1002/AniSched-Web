@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NanumGothic'), url(fnt/NotoSansKR-Regular.otf) format('otf');
+}
+
+@font-face {
+  font-family: 'Noto Sans KR Bold';
+  font-style: normal;
+  font-weight: 400;
+  src: local('NanumGothic'), url(fnt/NotoSansKR-Bold.otf) format('otf');
+}

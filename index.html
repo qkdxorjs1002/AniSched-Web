@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="euc-kr" />
+		<meta name="viewport" charset="euc-kr" content="width=device-width, minimum-scale=0.1">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/font.css" rel="stylesheet">
+		<script type="text/javascript" src="js/script.js"></script>
+	</head>
+	<body onload="init();">
+		<div class="header" onClick="toggleMenu();">AniSched</div>
+		<div class="contents">
+			<div id="menu">
+				<input id="search" type="text">
+				<input type="button" value="검색" onClick="search();">
+			</div>
+			<div id="tab"></div>
+			<div id="list"></div>
+		</div>
+		<div id="overlay" onClick="releaseCap();">
+			<div id="captitle" class="header">null</div>
+			<div class="contents">
+				<div id="image"></div>
+				<div id="caption"></div>
+			</div>
+		</div>
+	</body>
+</html>
