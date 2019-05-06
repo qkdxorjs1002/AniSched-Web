@@ -8,70 +8,145 @@ body {
 	text-align: center;
 	font-family: 'Noto Sans KR', sans-serif;
 }
+td {
+	padding: 0;
+}
 div.title {
 	width: 100%;
 	text-align: center;
-}
-div.contents {
-	padding-top: 60px;
 }
 div.child {
 	display: inline-block;
 	margin-top: 20%;
 }
-div.header {
-	position: fixed;
-	width: 100%;
-	font-weight:bold;
-	text-align: center;
-	color: #FFFFFF;
-	font-size: 30px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	background-color: #E91E63;
-	font-family: 'Noto Sans KR Bold', sans-serif;
-}
 div.item {
-	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.35);
 	margin: 10px;
 	padding: 10px;
 	background-color: #FFFFFF;
+}
+div.item:hover {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.35);
+	margin: 10px;
+	padding: 10px;
+	background-color: #EEEEEE;
+	cursor: pointer;
 }
 div.item-cap {
-	min-width: 35vw;
 	width: auto;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.35);
 	margin: 10px;
 	padding: 10px;
 	background-color: #FFFFFF;
+}
+div.item-cap:hover {
+	width: auto;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.35);
+	margin: 10px;
+	padding: 10px;
+	background-color: #EEEEEE;
+	cursor: pointer;
 }
 div.day {
 	width: 100%;
-	height: 35px;
+	height: 50px;
 	font-size: 20px;
-	font-family: 'Noto Sans KR Bold', sans-serif;
+	font-family: 'Noto Sans KR', sans-serif;
 	text-align: center;
-	line-height: 32.5px;
-	color: #E91E63;
+	line-height: 50px;
+	color: #FFFFFF;
+}
+div.day:hover {
+	width: 100%;
+	height: 50px;
+	font-size: 20px;
+	font-family: 'Noto Sans KR', sans-serif;
+	text-align: center;
+	line-height: 50px;
+	color: #FE3B72;
 	background-color: #FFFFFF;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	cursor: pointer;
 }
 table.sel_day {
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	border-spacing: 0;
+}
+#header {
+	position: fixed;
+	width: 100%;
+	font-weight:bold;
+	color: #FFFFFF;
+	font-size: 15px;
+	text-align: left;
+	line-height: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	background-color: #FE3B72;
+	font-family: 'Noto Sans KR', sans-serif;
+	animation-name: fade;
+	animation-duration: 0.3s;
+}
+#contents {
+	padding-top: 30px;
+	padding-left: 50px;
+}
+#captitle {
+	background-color: #FE3B72;
+	color: #FFFFFF;
+	width: 100%;
+	max-width: 400px;
+	height: 50px;
+	font-size: 20px;
+	line-height: 50px;
+	position: absolute;
+	overflow: hidden;
+}
+#capcontents {
+	overflow: auto;
+	background-color: #FE3B72;
+	width: 100%;
+	height: 100%;
+	max-width: 400px;
+}
+#description {
+	background-color: rgba(0, 0, 0, 0.35);
+	color: #FFFFFF;
+	text-align: left;
+	line-height: 30px;
+	overflow: hidden;
+	position: absolute;
+	max-width: 400px;
+	width: 100%;
+	height: 0;
+	transition: .5s ease;
+}
+#image {
+	overflow: hidden;
+	width: 100%;
+	max-height: 400px;
+	margin-top: 50px;
+}
+#image:hover #description {
+	height: 400px;
 }
 #thumbnail {
-	margin-top: 10px;
-	max-width: 50vw;
-	max-height: 50vh;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	width: 100%;
+}
+#inform {
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 #tab {
-	max-width: 636px;
+	position: fixed;
+	width: 50px;
+	height: 100%;
 	font-size: 20px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top: 30px;
+	background-color: #FE3B72;
 	animation-name: fade;
 	animation-duration: 0.3s;
 }
@@ -83,20 +158,27 @@ table.sel_day {
 	animation-name: fade;
 	animation-duration: 0.3s;
 	background-color: #FFFFFF;
-	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.35);
+}
+#namu {
+	border: 0, 1px, 0, 0 solid;
+	height:50px;
+	float:left;
+}
+#namu:hover {
+	background-color: rgba(255, 255, 255, 0.35);
+	height:50px;
+	float:left;
 }
 #list {
 	display: inline-block;
-	max-width: 650px;
 	width: 100%;
-	animation-name: fade;
-	animation-duration: 0.3s;
 }
 #caption {
-	display: inline-block;
+	overflow-y: auto;
+	padding-bottom: 30px;
 }
 #overlay {
-	overflow-x: auto;
 	display: none;
 	position: fixed;
 	top: 0px;
@@ -104,13 +186,12 @@ table.sel_day {
 	right: 0px;
 	bottom: 0px;
 	z-index: 2;
+	margin-top: 30px;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255,255,255,0.7);
 	animation-name: fade;
 	animation-duration: 0.3s;
 }
-
 ::-webkit-scrollbar {
 	display: none;
 }
